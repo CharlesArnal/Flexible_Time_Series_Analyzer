@@ -18,3 +18,5 @@ One can also change the number of parameters configuration tested by the randomi
 The two main functions are modelEstimate and modelForecast
 modelEstimate takes as input the path to a csv file containing the training data, and outputs the selected trained model
 modelForecast takes as input a trained model and a path to a csv file containing the test data, and outputs predictions
+
+![illustration_model](https://user-images.githubusercontent.com/71833961/145279905-28059054-8e29-421d-bcbb-0c233e965231.png)
