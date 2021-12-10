@@ -79,12 +79,12 @@ def build_model(input_dim=2, n_rec_layers=2,n_hid_dense_layers=1,width_layers=10
       short_term_info = keras.layers.GRU(width_layers, return_sequences=True)(short_term_info)
     short_term_info = keras.layers.GRU(width_layers, return_sequences=True)(short_term_info)
 
-    mid_term_info = keras.layers.Conv1D(filters=width_layers, kernel_size=10, strides=5, padding="causal")(input_shape)
+    mid_term_info = keras.layers.Conv1D(filters=width_layers, kernel_size=10, strides=1, padding="causal")(input_shape)
     for i in range(0,n_rec_layers-1):
       mid_term_info = keras.layers.GRU(width_layers, return_sequences=True)(mid_term_info)
     mid_term_info = keras.layers.GRU(width_layers, return_sequences=True)(mid_term_info)
 
-    long_term_info = keras.layers.Conv1D(filters=width_layers, kernel_size=100, strides=50, padding="causal")(input_shape)
+    long_term_info = keras.layers.Conv1D(filters=width_layers, kernel_size=100, strides=1, padding="causal")(input_shape)
     for i in range(0,n_rec_layers-1):
       long_term_info = keras.layers.GRU(width_layers, return_sequences=True)(long_term_info)
     long_term_info = keras.layers.GRU(width_layers, return_sequences=True)(long_term_info)
